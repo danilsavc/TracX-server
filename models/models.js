@@ -50,7 +50,7 @@ Event.belongsTo(Category);
 Event.hasMany(BasketEvent);
 BasketEvent.belongsTo(Event);
 
-Event.hasMany(EventInfo);
+Event.hasMany(EventInfo, { as: "info" });
 EventInfo.belongsTo(Event);
 
 export default {
