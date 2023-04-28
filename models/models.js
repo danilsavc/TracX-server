@@ -22,7 +22,7 @@ const Event = sequelize.define("event", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   title: { type: DataTypes.STRING, allowNull: false },
   subtitle: { type: DataTypes.STRING, allowNull: false },
-  format: { type: DataTypes.BOOLEAN, allowNull: false },
+  format: { type: DataTypes.STRING, allowNull: false },
   data: { type: DataTypes.DATE, allowNull: false },
   price: { type: DataTypes.INTEGER, allowNull: false },
 });

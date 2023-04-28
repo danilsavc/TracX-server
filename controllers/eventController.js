@@ -1,8 +1,8 @@
 import models from "../models/models.js";
 import ApiError from "../error/apiError.js";
 
-const Event = models.Event;
-const EventInfo = models.EventInfo;
+const Event = models.Event || "";
+const EventInfo = models.EventInfo || "";
 
 class EventController {
   async create(req, res, next) {
