@@ -49,13 +49,37 @@ class EventController {
     }
   }
 
-  async getOne(req, res) {
-    const { id } = req.params;
-    const event = await Event.findOne({
-      where: { id },
-      include: [{ model: EventInfo, as: "info" }],
-    });
-    return res.json(event);
+  async getOne(req, res, next) {
+    try {
+      const { id } = req.params;
+      const event = await Event.findOne({
+        where: { id },
+        include: [{ model: EventInfo, as: "info" }],
+      });
+
+      if (!event) {
+        return next(ApiError.badRequest("Івента з таким id не було знайдено"));
+      }
+
+      return res.json(event);
+    } catch (error) {
+      next(ApiError.badRequest(error.message));
+    }
+  }
+
+  async delete(req, res, next) {
+    try {
+      const { id } = req.params;
+      const event = await Event.destroy({ where: { id } });
+
+      if (!event) {
+        return next(ApiError.badRequest("Івента з таким id не було знайдено"));
+      }
+
+      return res.json({ message: "Івент було успішно видалено" });
+    } catch (error) {
+      next(ApiError.badRequest(error.message));
+    }
   }
 }
 

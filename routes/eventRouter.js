@@ -15,5 +15,5 @@ router.post(
 );
 router.get("/", eventController.getAll);
 router.get("/:id", eventController.getOne);
-
+router.delete("/:id", checkRole("ADMIN"), eventController.delete);
 export default router;
