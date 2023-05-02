@@ -1,5 +1,7 @@
+import nodemailer from "nodemailer";
 import models from "../models/models.js";
 import ApiError from "../error/apiError.js";
+import { sendEmail } from "../sendEmail.js";
 
 const Basket = models.Basket || "";
 const Basket_Event = models.BasketEvent || "";
@@ -7,14 +9,27 @@ const Event = models.Event || "";
 
 class BasketController {
   async create(req, res, next) {
+    const user = req.user.id;
+    const { name, surname, email } = req.user;
+    const { eventId } = req.body;
+
+    const fullname = name + " " + surname;
+
+    const transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 587,
+      secure: false,
+      auth: {
+        user: process.env.EMAIL_EMAIL,
+        pass: process.env.EMAIL_APP_PASSWORD,
+      },
+    });
+
+    if (!eventId) {
+      return next(ApiError.badRequest("Id івента не вказаний"));
+    }
+
     try {
-      const user = req.user.id;
-      const { eventId } = req.body;
-
-      if (!eventId) {
-        return next(ApiError.badRequest("Id івента не вказаний"));
-      }
-
       const basket = await Basket.findOne({ where: { userId: user } });
 
       if (!basket) {
@@ -36,6 +51,8 @@ class BasketController {
       }
 
       await Basket_Event.create({ basketId: basket.id, eventId: event.id });
+
+      await transporter.sendMail(sendEmail(email, fullname, event));
 
       return res.json({ message: "Івент успішно додано до кошика" });
     } catch (error) {
