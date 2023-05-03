@@ -56,11 +56,17 @@ export const sendEmail = (email, fullname, event) => {
             <p>Ви записалися на івент ${event.title}</p>
             <h1>Де зібратися, щоб подивитися конференцію?</h1>
             <li>Київ, офіс Sigma Software. ${event.data}</li>
-            <p>При собі потрібно мати документ, для підтвердження особи</p>
+            <p>При собі потрібно мати документ, для підтвердження особи та квиток на подію</p>
           </div>
         </body>
       </html> 
           `,
+    attachments: [
+      {
+        filename: "ticket.pdf",
+        path: "./pdf/ticket.pdf",
+      },
+    ],
   };
   return mailTemplate;
 };

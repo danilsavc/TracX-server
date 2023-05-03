@@ -2,6 +2,7 @@ import nodemailer from "nodemailer";
 import models from "../models/models.js";
 import ApiError from "../error/apiError.js";
 import { sendEmail } from "../sendEmail.js";
+import { createPdf, removePdf } from "../pdf.js";
 
 const Basket = models.Basket || "";
 const Basket_Event = models.BasketEvent || "";
@@ -51,8 +52,9 @@ class BasketController {
       }
 
       await Basket_Event.create({ basketId: basket.id, eventId: event.id });
-
+      await createPdf();
       await transporter.sendMail(sendEmail(email, fullname, event));
+      await removePdf();
 
       return res.json({ message: "Івент успішно додано до кошика" });
     } catch (error) {
