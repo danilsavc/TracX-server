@@ -2,6 +2,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import ApiError from "../error/apiError.js";
 import models from "../models/models.js";
+import emailValid from "../validations/emailValid.js";
 
 const User = models.User || "";
 const Basket = models.Basket || "";
@@ -16,6 +17,11 @@ class UserController {
   async registration(req, res, next) {
     try {
       const { name, surname, email, password, role } = req.body;
+      const valid = emailValid(email);
+
+      if (!valid) {
+        return next(ApiError.badRequest("Такої пошти не існує"));
+      }
 
       const candidate = await User.findOne({ where: { email } });
 

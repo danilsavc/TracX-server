@@ -1,6 +1,6 @@
 import { Router } from "express";
 import userController from "../controllers/userController.js";
-import Validations from "../validations.js";
+import Validations from "../validations/validations.js";
 import errorValid from "../middleware/ErrorValidationsMeddleware.js";
 import authMiddleware from "../middleware/authMiddleware.js";
 

@@ -1,6 +1,6 @@
 import { Router } from "express";
 import categoryController from "../controllers/categoryController.js";
-import Validation from "../validations.js";
+import Validation from "../validations/validations.js";
 import errorValidations from "../middleware/ErrorValidationsMeddleware.js";
 import checkRole from "../middleware/checkRoleMiddleware.js";
 
