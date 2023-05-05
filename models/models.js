@@ -7,10 +7,14 @@ const User = sequelize.define("user", {
   surname: { type: DataTypes.STRING },
   email: { type: DataTypes.STRING, unique: true },
   password: { type: DataTypes.STRING },
-  role: { type: DataTypes.STRING, defaultValue: "USER" },
 });
 
-const Basket = sequelize.define("basket", {
+const Roles = sequelize.define("roles", {
+  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+  name: { type: DataTypes.STRING, unique: true, allowNull: false },
+});
+
+const UserRole = sequelize.define("user_role", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
 });
 
@@ -21,13 +25,17 @@ const BasketEvent = sequelize.define("basket_event", {
 const Event = sequelize.define("event", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   title: { type: DataTypes.STRING, allowNull: false },
-  subtitle: { type: DataTypes.STRING, allowNull: false },
-  format: { type: DataTypes.STRING, allowNull: false },
+  descriptions: { type: DataTypes.STRING, allowNull: false },
   data: { type: DataTypes.DATE, allowNull: false },
   price: { type: DataTypes.INTEGER, allowNull: false },
 });
 
 const Category = sequelize.define("category", {
+  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+  name: { type: DataTypes.STRING, unique: true, allowNull: false },
+});
+
+const Format = sequelize.define("format", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   name: { type: DataTypes.STRING, unique: true, allowNull: false },
 });
@@ -38,14 +46,17 @@ const EventInfo = sequelize.define("event_info", {
   descriptions: { type: DataTypes.STRING, allowNull: false },
 });
 
-User.hasOne(Basket);
-Basket.belongsTo(User);
+User.hasOne(BasketEvent);
+BasketEvent.belongsTo(User);
 
-Basket.hasMany(BasketEvent);
-BasketEvent.belongsTo(Basket);
+User.belongsToMany(Roles, { through: "user_role" });
+Roles.belongsToMany(User, { through: "user_role" });
 
 Category.hasMany(Event);
 Event.belongsTo(Category);
+
+Format.hasMany(Event);
+Event.belongsTo(Format);
 
 Event.hasMany(BasketEvent);
 BasketEvent.belongsTo(Event);
@@ -55,7 +66,9 @@ EventInfo.belongsTo(Event);
 
 export default {
   User,
-  Basket,
+  Roles,
+  Format,
+  UserRole,
   BasketEvent,
   Category,
   Event,

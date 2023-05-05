@@ -1,5 +1,6 @@
 import { Router } from "express";
 import catagoryRouter from "./categoryRouter.js";
+import rolesRouter from "./rolesRouter.js";
 import eventRouter from "./eventRouter.js";
 import userRouter from "./userRouter.js";
 import basketRouter from "./basketRouter.js";
@@ -10,5 +11,5 @@ router.use("/user", userRouter);
 router.use("/event", eventRouter);
 router.use("/category", catagoryRouter);
 router.use("/basket", basketRouter);
-
+router.use("/roles", rolesRouter);
 export default router;

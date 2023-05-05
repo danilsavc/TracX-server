@@ -5,10 +5,11 @@ import models from "../models/models.js";
 import emailValid from "../validations/emailValid.js";
 
 const User = models.User || "";
-const Basket = models.Basket || "";
+const Roles = models.Roles || "";
+const UserRole = models.UserRole || "";
 
-const generateJwt = (id, name, surname, email, role) => {
-  return jwt.sign({ id, name, surname, email, role }, process.env.SECRETKEY, {
+const generateJwt = (id, name, surname, email, roleName) => {
+  return jwt.sign({ id, name, surname, email, roleName }, process.env.SECRETKEY, {
     expiresIn: "24h",
   });
 };
@@ -16,9 +17,14 @@ const generateJwt = (id, name, surname, email, role) => {
 class UserController {
   async registration(req, res, next) {
     try {
-      const { name, surname, email, password, role } = req.body;
+      const { name, surname, email, password } = req.body;
+      let roles_id = req.body.roles_id;
       const valid = emailValid(email);
-
+      console.log(roles_id);
+      if (!roles_id) {
+        roles_id = 1;
+      }
+      console.log(roles_id);
       if (!valid) {
         return next(ApiError.badRequest("Такої пошти не існує"));
       }
@@ -31,10 +37,12 @@ class UserController {
 
       const hashPassword = await bcrypt.hash(password, 5);
 
-      const user = await User.create({ name, surname, email, password: hashPassword, role });
-      const basket = await Basket.create({ userId: user.id });
+      const user = await User.create({ name, surname, email, password: hashPassword });
 
-      const token = generateJwt(user.id, user.name, user.surname, user.email, user.role);
+      const roles = await Roles.findOne({ where: { id: roles_id } });
+      await UserRole.create({ userId: user.id, roleId: roles.id });
+
+      const token = generateJwt(user.id, user.name, user.surname, user.email, roles.name);
 
       return res.json({ token });
     } catch (error) {
@@ -57,7 +65,10 @@ class UserController {
         return next(ApiError.internal("Неправильна пошта або пароль"));
       }
 
-      const token = generateJwt(user.id, user.name, user.surname, user.email, user.role);
+      const userRole = await UserRole.findOne({ where: { userId: user.id } });
+      const roles = await Roles.findOne({ where: { id: userRole.roleId } });
+
+      const token = generateJwt(user.id, user.name, user.surname, user.email, roles.name);
       return res.json({ token });
     } catch (error) {
       next(ApiError.badRequest(error.message));
@@ -66,7 +77,16 @@ class UserController {
 
   async check(req, res, next) {
     try {
-      const token = generateJwt(user.id, user.name, user.surname, user.email, user.role);
+      const userRole = await UserRole.findOne({ where: { userId: req.user.id } });
+      const roles = await Roles.findOne({ where: { id: userRole.roleId } });
+
+      const token = generateJwt(
+        req.user.id,
+        req.user.name,
+        req.user.surname,
+        req.user.email,
+        roles.name
+      );
 
       return res.json({ token });
     } catch (error) {

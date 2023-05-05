@@ -1,5 +1,5 @@
 import { Router } from "express";
-import categoryController from "../controllers/categoryController.js";
+import rolesController from "../controllers/rolesController.js";
 import Validation from "../validations/validations.js";
 import errorValidations from "../middleware/ErrorValidationsMeddleware.js";
 import checkRole from "../middleware/checkRoleMiddleware.js";
@@ -9,10 +9,10 @@ const router = new Router();
 router.post(
   "/",
   // checkRole("ADMIN"),
-  Validation.categoryValidation,
+  Validation.rolesValidation,
   errorValidations,
-  categoryController.create
+  rolesController.create
 );
-router.get("/", categoryController.getAll);
+router.get("/", rolesController.getAll);
 
 export default router;

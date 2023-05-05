@@ -43,6 +43,17 @@ class Validations {
       .withMessage("Категорія повиненна містити мінімум 3 символи, а максимально 10 символів"),
   ];
 
+  rolesValidation = [
+    body("name")
+      .notEmpty()
+      .withMessage("Назва ролі є обов'язковою для заповнення")
+      .isLength({
+        min: 2,
+        max: 10,
+      })
+      .withMessage("Роль повиненна містити мінімум 3 символи, а максимально 10 символів"),
+  ];
+
   registrationValidation = [
     body("name")
       .notEmpty()
