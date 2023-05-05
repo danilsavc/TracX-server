@@ -4,6 +4,7 @@ import rolesRouter from "./rolesRouter.js";
 import eventRouter from "./eventRouter.js";
 import userRouter from "./userRouter.js";
 import basketRouter from "./basketRouter.js";
+import formatRouter from "./formatRouter.js";
 
 const router = new Router();
 
@@ -12,4 +13,5 @@ router.use("/event", eventRouter);
 router.use("/category", catagoryRouter);
 router.use("/basket", basketRouter);
 router.use("/roles", rolesRouter);
+router.use("/format", formatRouter);
 export default router;

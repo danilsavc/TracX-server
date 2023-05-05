@@ -15,7 +15,7 @@ export default function (role) {
 
       const decoded = jwt.verify(token, process.env.SECRETKEY);
 
-      if (decoded.role !== role) {
+      if (decoded.roleName !== role) {
         return res.status(403).json({ message: "Немає доступа" });
       }
 

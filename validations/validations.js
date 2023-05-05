@@ -10,16 +10,11 @@ class Validations {
         max: 25,
       })
       .withMessage("Заголовок повинен містити мінімум 3 символи, а максимально 25 символів"),
-    body("subtitle")
+    body("descriptions")
       .notEmpty()
-      .withMessage("Підзаголовок є обов'язковим для заповнення")
+      .withMessage("Опис є обов'язковим для заповнення")
       .isLength({ min: 3 })
-      .withMessage("Підзаголовок повинен містити мінімум 3 символи"),
-    body("format", "Формат повинен містити лише true або false")
-      .notEmpty()
-      .withMessage("Формат є обов'язковим для заповнення")
-      .isIn(["online", "offline"])
-      .withMessage("Формат повинен містити лише online або offline"),
+      .withMessage("Опис повинен містити мінімум 3 символи"),
     body("data")
       .notEmpty()
       .withMessage("Дата є обов'язковою для заповнення")
@@ -52,6 +47,17 @@ class Validations {
         max: 10,
       })
       .withMessage("Роль повиненна містити мінімум 3 символи, а максимально 10 символів"),
+  ];
+
+  formatValidation = [
+    body("name")
+      .notEmpty()
+      .withMessage("Назва формата є обов'язковою для заповнення")
+      .isLength({
+        min: 2,
+        max: 10,
+      })
+      .withMessage("Формат повиненна містити мінімум 3 символи, а максимально 10 символів"),
   ];
 
   registrationValidation = [

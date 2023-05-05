@@ -7,15 +7,16 @@ const EventInfo = models.EventInfo || "";
 class EventController {
   async create(req, res, next) {
     try {
-      let { title, subtitle, format, data, price, categoryId, info } = req.body;
-      const event = await Event.create({ title, subtitle, format, data, price, categoryId });
+      let { title, descriptions, data, price, categoryId, formatId, info } = req.body;
+
+      const event = await Event.create({ title, descriptions, data, price, categoryId, formatId });
 
       if (info) {
-        info.forEach((i) => {
+        await info.forEach((i) => {
           EventInfo.create({
             title: i.title,
-            description: i.description,
-            id: event.id,
+            descriptions: i.descriptions,
+            eventId: event.id,
           });
         });
       }
@@ -28,19 +29,27 @@ class EventController {
 
   async getAll(req, res) {
     try {
-      let { categoryId, limit, page } = req.query;
+      let { categoryId, formatId, limit, page } = req.query;
       page = page || 1;
       limit = limit || 9;
       let offset = page * limit - limit;
 
       let events;
 
-      if (!categoryId) {
+      if (!categoryId && !formatId) {
         events = await Event.findAndCountAll({ limit, offset });
       }
 
-      if (categoryId) {
+      if (categoryId && !formatId) {
         events = await Event.findAndCountAll({ where: { categoryId }, limit, offset });
+      }
+
+      if (!categoryId && formatId) {
+        events = await Event.findAndCountAll({ where: { formatId }, limit, offset });
+      }
+
+      if (categoryId && formatId) {
+        events = await Event.findAndCountAll({ where: { categoryId, formatId }, limit, offset });
       }
 
       return res.json(events);
