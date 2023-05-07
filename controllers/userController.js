@@ -19,12 +19,13 @@ class UserController {
     try {
       const { name, surname, email, password } = req.body;
       let roles_id = req.body.roles_id;
-      const valid = emailValid(email);
-      console.log(roles_id);
+
       if (!roles_id) {
-        roles_id = 1;
+        roles_id = 2;
       }
-      console.log(roles_id);
+
+      const valid = emailValid(email);
+
       if (!valid) {
         return next(ApiError.badRequest("Такої пошти не існує"));
       }

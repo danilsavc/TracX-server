@@ -7,18 +7,31 @@ const EventInfo = models.EventInfo || "";
 class EventController {
   async create(req, res, next) {
     try {
-      let { title, descriptions, data, price, categoryId, formatId, info } = req.body;
+      let { title, descriptions, data, price, tags, categoryId, formatId, info } = req.body;
+      // const tagsString = JSON.stringify(tags);
 
-      const event = await Event.create({ title, descriptions, data, price, categoryId, formatId });
+      const event = await Event.create({
+        title,
+        descriptions,
+        data,
+        price,
+        tags,
+        categoryId,
+        formatId,
+      });
 
       if (info) {
-        await info.forEach((i) => {
-          EventInfo.create({
-            title: i.title,
-            descriptions: i.descriptions,
-            eventId: event.id,
-          });
-        });
+        const eventInfos = await Promise.all(
+          info.map((i) =>
+            EventInfo.create({
+              title: i.title,
+              descriptions: i.descriptions,
+              eventId: event.id,
+            })
+          )
+        );
+
+        event.dataValues.info = eventInfos; // Додайте масив eventInfos до event для повернення у відповіді
       }
 
       return res.json(event);
@@ -76,13 +89,63 @@ class EventController {
     }
   }
 
+  async update(req, res, next) {
+    try {
+      const { id } = req.params;
+      const { title, descriptions, data, price, tags, categoryId, formatId, info } = req.body;
+      const event = await Event.findOne({ where: { id } });
+
+      if (!event) {
+        return next(ApiError.badRequest("Івента з таким id не було знайдено"));
+      }
+
+      event.title = title;
+      event.descriptions = descriptions;
+      event.data = data;
+      event.price = price;
+      event.tags = tags;
+      event.categoryId = categoryId;
+      event.formatId = formatId;
+
+      await event.save();
+
+      if (info) {
+        // Видалити попередні записи EventInfo пов'язані з івентом
+        await EventInfo.destroy({ where: { eventId: event.id } });
+
+        // Створити нові записи EventInfo на основі наданого info
+        const eventInfos = await Promise.all(
+          info.map((i) =>
+            EventInfo.create({
+              title: i.title,
+              descriptions: i.descriptions,
+              eventId: event.id,
+            })
+          )
+        );
+
+        event.dataValues.info = eventInfos; // Додати масив eventInfos до event для повернення у відповіді
+      }
+
+      res.json(event);
+    } catch (error) {
+      next(ApiError.badRequest(error.message));
+    }
+  }
+
   async delete(req, res, next) {
     try {
       const { id } = req.params;
+
+      const eventInfo = await EventInfo.destroy({ where: { eventId: id } });
       const event = await Event.destroy({ where: { id } });
 
       if (!event) {
         return next(ApiError.badRequest("Івента з таким id не було знайдено"));
+      }
+
+      if (!eventInfo) {
+        return next(ApiError.badRequest("Інформації про івент з таким id не було знайдено"));
       }
 
       return res.json({ message: "Івент було успішно видалено" });

@@ -25,6 +25,18 @@ class Validations {
       .withMessage("Ціна є обов'язковою для заповнення")
       .isInt({ max: 9999 })
       .withMessage("Ціна повинна бути числом від 0 та до 9999"),
+    body("tags")
+      .optional({ nullable: true }) // Дозволяє поле бути або null, або пустим масивом
+      .isArray()
+      .withMessage("Теги повинні бути в масиві")
+      .custom((value) => {
+        // Перевірка, що кожен тег має мінімум 2 символи, якщо вони присутні
+        if (value.length > 0) {
+          return value.every((tag) => tag.length >= 2);
+        }
+        return true; // Пропускає перевірку, якщо теги відсутні
+      })
+      .withMessage("Теги повинні містити мінімум 2 символи"),
   ];
 
   categoryValidation = [
@@ -35,7 +47,7 @@ class Validations {
         min: 2,
         max: 10,
       })
-      .withMessage("Категорія повиненна містити мінімум 3 символи, а максимально 10 символів"),
+      .withMessage("Категорія повиненна містити мінімум 2 символи, а максимально 10 символів"),
   ];
 
   rolesValidation = [
