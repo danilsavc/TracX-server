@@ -7,8 +7,8 @@ const EventInfo = models.EventInfo || "";
 class EventController {
   async create(req, res, next) {
     try {
+      const user_id = req.user.id;
       let { title, descriptions, data, price, tags, categoryId, formatId, info } = req.body;
-      // const tagsString = JSON.stringify(tags);
 
       const event = await Event.create({
         title,
@@ -18,6 +18,7 @@ class EventController {
         tags,
         categoryId,
         formatId,
+        userId: user_id,
       });
 
       if (info) {
@@ -92,11 +93,16 @@ class EventController {
   async update(req, res, next) {
     try {
       const { id } = req.params;
+      const user_id = req.user.id;
       const { title, descriptions, data, price, tags, categoryId, formatId, info } = req.body;
       const event = await Event.findOne({ where: { id } });
 
       if (!event) {
         return next(ApiError.badRequest("Івента з таким id не було знайдено"));
+      }
+
+      if (event.userId !== user_id) {
+        return next(ApiError.internal("Немає доступа"));
       }
 
       event.title = title;
@@ -136,9 +142,11 @@ class EventController {
   async delete(req, res, next) {
     try {
       const { id } = req.params;
+      const user_id = req.user.id;
 
-      const eventInfo = await EventInfo.destroy({ where: { eventId: id } });
-      const event = await Event.destroy({ where: { id } });
+      const event = await Event.findOne({ where: { id } });
+
+      const eventInfo = await EventInfo.findAll({ where: { eventId: id } });
 
       if (!event) {
         return next(ApiError.badRequest("Івента з таким id не було знайдено"));
@@ -147,6 +155,13 @@ class EventController {
       if (!eventInfo) {
         return next(ApiError.badRequest("Інформації про івент з таким id не було знайдено"));
       }
+
+      if (event.userId !== user_id) {
+        return next(ApiError.internal("Немає доступа"));
+      }
+
+      await Event.destroy({ where: { id } });
+      await EventInfo.destroy({ where: { eventId: id } });
 
       return res.json({ message: "Івент було успішно видалено" });
     } catch (error) {

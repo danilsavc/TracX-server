@@ -53,6 +53,9 @@ BasketEvent.belongsTo(User);
 User.belongsToMany(Roles, { through: "user_role" });
 Roles.belongsToMany(User, { through: "user_role" });
 
+User.hasMany(Event);
+Event.belongsTo(User);
+
 Category.hasMany(Event);
 Event.belongsTo(Category);
 
