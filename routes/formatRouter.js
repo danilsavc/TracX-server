@@ -13,6 +13,7 @@ router.post(
   errorValidations,
   formatController.create
 );
+router.get("/:id", formatController.getOne);
 router.get("/", formatController.getAll);
 
 export default router;
