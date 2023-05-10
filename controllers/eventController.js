@@ -8,7 +8,8 @@ class EventController {
   async create(req, res, next) {
     try {
       const user_id = req.user.id;
-      let { title, descriptions, data, price, tags, categoryId, formatId, info } = req.body;
+      let { title, descriptions, data, price, tags, categoryId, bcgColor, formatId, info } =
+        req.body;
 
       const event = await Event.create({
         title,
@@ -18,6 +19,7 @@ class EventController {
         tags,
         categoryId,
         formatId,
+        bcgColor,
         userId: user_id,
       });
 
@@ -94,7 +96,8 @@ class EventController {
     try {
       const { id } = req.params;
       const user_id = req.user.id;
-      const { title, descriptions, data, price, tags, categoryId, formatId, info } = req.body;
+      const { title, descriptions, data, price, tags, categoryId, formatId, bcgColor, info } =
+        req.body;
       const event = await Event.findOne({ where: { id } });
 
       if (!event) {
@@ -110,6 +113,7 @@ class EventController {
       event.data = data;
       event.price = price;
       event.tags = tags;
+      event.bcgColor = bcgColor;
       event.categoryId = categoryId;
       event.formatId = formatId;
 

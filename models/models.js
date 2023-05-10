@@ -29,6 +29,7 @@ const Event = sequelize.define("event", {
   tags: { type: DataTypes.ARRAY(DataTypes.STRING), allowNull: true },
   data: { type: DataTypes.DATE, allowNull: false },
   price: { type: DataTypes.INTEGER, allowNull: false },
+  bcgColor: { type: DataTypes.STRING, allowNull: false },
 });
 
 const Category = sequelize.define("category", {
