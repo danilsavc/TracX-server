@@ -6,10 +6,10 @@ class Validations {
       .notEmpty()
       .withMessage("Заголовок є обов'язковим для заповнення")
       .isLength({
-        min: 3,
+        min: 2,
         max: 25,
       })
-      .withMessage("Заголовок повинен містити мінімум 3 символи, а максимально 25 символів"),
+      .withMessage("Заголовок повинен містити мінімум 2 символи, а максимально 25 символів"),
     body("descriptions")
       .notEmpty()
       .withMessage("Опис є обов'язковим для заповнення")

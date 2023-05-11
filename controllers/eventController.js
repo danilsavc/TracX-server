@@ -47,28 +47,49 @@ class EventController {
     try {
       let { categoryId, formatId, limit, page } = req.query;
       page = page || 1;
-      limit = limit || 9;
+      limit = limit || 6;
       let offset = page * limit - limit;
-
       let events;
 
       if (!categoryId && !formatId) {
-        events = await Event.findAndCountAll({ limit, offset });
+        events = await Event.findAndCountAll({
+          limit,
+          offset,
+          include: [{ model: EventInfo, as: "info" }],
+        });
       }
 
       if (categoryId && !formatId) {
-        events = await Event.findAndCountAll({ where: { categoryId }, limit, offset });
+        events = await Event.findAndCountAll({
+          where: { categoryId },
+          limit,
+          offset,
+          include: [{ model: EventInfo, as: "info" }],
+        });
       }
 
       if (!categoryId && formatId) {
-        events = await Event.findAndCountAll({ where: { formatId }, limit, offset });
+        events = await Event.findAndCountAll({
+          where: { formatId },
+          limit,
+          offset,
+          include: [{ model: EventInfo, as: "info" }],
+        });
       }
 
       if (categoryId && formatId) {
-        events = await Event.findAndCountAll({ where: { categoryId, formatId }, limit, offset });
+        events = await Event.findAndCountAll({
+          where: { categoryId, formatId },
+          limit,
+          offset,
+          include: [{ model: EventInfo, as: "info" }],
+        });
       }
 
-      return res.json(events);
+      const totalItems = events.count;
+      const totalPages = Math.floor(totalItems / limit);
+
+      return res.json({ events, totalPages });
     } catch (error) {
       res.json(ApiError.badRequest(error.message));
     }
