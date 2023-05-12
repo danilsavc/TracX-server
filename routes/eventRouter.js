@@ -15,6 +15,7 @@ router.post(
 );
 router.get("/", eventController.getAll);
 router.get("/:id", eventController.getOne);
+router.get("/event-info/:id", eventController.getOneEventInfo);
 router.patch(
   "/:id",
   checkRole("ADMIN"),

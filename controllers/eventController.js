@@ -55,7 +55,6 @@ class EventController {
         events = await Event.findAndCountAll({
           limit,
           offset,
-          include: [{ model: EventInfo, as: "info" }],
         });
       }
 
@@ -64,7 +63,6 @@ class EventController {
           where: { categoryId },
           limit,
           offset,
-          include: [{ model: EventInfo, as: "info" }],
         });
       }
 
@@ -73,7 +71,6 @@ class EventController {
           where: { formatId },
           limit,
           offset,
-          include: [{ model: EventInfo, as: "info" }],
         });
       }
 
@@ -82,12 +79,11 @@ class EventController {
           where: { categoryId, formatId },
           limit,
           offset,
-          include: [{ model: EventInfo, as: "info" }],
         });
       }
 
       const totalItems = events.count;
-      const totalPages = Math.floor(totalItems / limit);
+      const totalPages = Math.ceil(totalItems / limit);
 
       return res.json({ events, totalPages });
     } catch (error) {
@@ -189,6 +185,21 @@ class EventController {
       await EventInfo.destroy({ where: { eventId: id } });
 
       return res.json({ message: "Івент було успішно видалено" });
+    } catch (error) {
+      next(ApiError.badRequest(error.message));
+    }
+  }
+
+  async getOneEventInfo(req, res, next) {
+    try {
+      const { id } = req.params;
+      const eventInfo = await EventInfo.findAll({ where: { eventId: id } });
+
+      if (eventInfo.length === 0) {
+        return next(ApiError.badRequest("Інформація про цей івент не була знайдена"));
+      }
+
+      res.json(eventInfo);
     } catch (error) {
       next(ApiError.badRequest(error.message));
     }
