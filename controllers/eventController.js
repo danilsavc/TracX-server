@@ -54,14 +54,31 @@ class EventController {
       let events;
 
       if (search) {
-        events = await Event.findAndCountAll();
+        const events = await Event.findAndCountAll();
         const filterEvents = events.rows.filter((obj) => {
           return obj.title.toLowerCase().includes(search.toLowerCase());
         });
 
-        totalItems = filterEvents.length;
-        totalPages = Math.ceil(totalItems / limit);
-        return res.json({ events: filterEvents, totalPages });
+        return res.json({
+          events: {
+            count: filterEvents.length,
+            rows: filterEvents.map((event) => ({
+              id: event.id,
+              title: event.title,
+              descriptions: event.descriptions,
+              tags: event.tags,
+              data: event.data,
+              price: event.price,
+              bcgColor: event.bcgColor,
+              createdAt: event.createdAt,
+              updatedAt: event.updatedAt,
+              userId: event.userId,
+              categoryId: event.categoryId,
+              formatId: event.formatId,
+            })),
+          },
+          totalPages: Math.ceil(filterEvents.length / limit),
+        });
       }
 
       if (!categoryId && !formatId) {
