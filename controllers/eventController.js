@@ -45,45 +45,43 @@ class EventController {
 
   async getAll(req, res) {
     try {
-      let { categoryId, formatId, limit, page } = req.query;
+      let { categoryId, formatId, limit, page, search } = req.query;
       page = page || 1;
       limit = limit || 6;
       let offset = page * limit - limit;
+      let totalItems = 0;
+      let totalPages = 0;
       let events;
 
-      if (!categoryId && !formatId) {
-        events = await Event.findAndCountAll({
-          limit,
-          offset,
+      if (search) {
+        events = await Event.findAndCountAll();
+        const filterEvents = events.rows.filter((obj) => {
+          return obj.title.toLowerCase().includes(search.toLowerCase());
         });
+
+        totalItems = filterEvents.length;
+        totalPages = Math.ceil(totalItems / limit);
+        return res.json({ events: filterEvents, totalPages });
+      }
+
+      if (!categoryId && !formatId) {
+        events = await Event.findAndCountAll({ limit, offset });
       }
 
       if (categoryId && !formatId) {
-        events = await Event.findAndCountAll({
-          where: { categoryId },
-          limit,
-          offset,
-        });
+        events = await Event.findAndCountAll({ where: { categoryId }, limit, offset });
       }
 
       if (!categoryId && formatId) {
-        events = await Event.findAndCountAll({
-          where: { formatId },
-          limit,
-          offset,
-        });
+        events = await Event.findAndCountAll({ where: { formatId }, limit, offset });
       }
 
       if (categoryId && formatId) {
-        events = await Event.findAndCountAll({
-          where: { categoryId, formatId },
-          limit,
-          offset,
-        });
+        events = await Event.findAndCountAll({ where: { categoryId, formatId }, limit, offset });
       }
 
-      const totalItems = events.count;
-      const totalPages = Math.ceil(totalItems / limit);
+      totalItems = events.count;
+      totalPages = Math.ceil(totalItems / limit);
 
       return res.json({ events, totalPages });
     } catch (error) {

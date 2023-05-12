@@ -18,8 +18,8 @@ class Validations {
     body("data")
       .notEmpty()
       .withMessage("Дата є обов'язковою для заповнення")
-      .isDate()
-      .withMessage("Дата повинна бути у такому форматі YYYY-MM-DD"),
+      .matches(/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}$/)
+      .withMessage("Дата повинна бути у форматі YYYY-MM-DD HH:mm"),
     body("price")
       .notEmpty()
       .withMessage("Ціна є обов'язковою для заповнення")
