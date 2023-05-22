@@ -41,7 +41,7 @@ class BasketController {
       });
 
       if (basketEvent) {
-        return next(ApiError.badRequest("Цей івент вже додано до кошика"));
+        return next(ApiError.badRequest("Цей івент вже додано до календаря"));
       }
 
       await Basket_Event.create({ userId: user, eventId: event.id });
@@ -49,7 +49,7 @@ class BasketController {
       await transporter.sendMail(sendEmail(email, fullname, event));
       await removePdf();
 
-      return res.json({ message: "Івент успішно додано до кошика" });
+      return res.json({ message: "Івент успішно додано до календаря" });
     } catch (error) {
       next(ApiError.badRequest(error.message));
     }
@@ -66,6 +66,26 @@ class BasketController {
     }
   }
 
+  async getBasketEvents(req, res, next) {
+    try {
+      const { events_id } = req.body;
+
+      if (!events_id) {
+        return next(ApiError.badRequest("Треба вказати id подій"));
+      }
+
+      const events = await Event.findAll({ where: { id: events_id } });
+
+      if (!events) {
+        return next(ApiError.badRequest("Подій з такими id не знайдено"));
+      }
+
+      return res.json(events);
+    } catch (error) {
+      next(ApiError.badRequest(error.message));
+    }
+  }
+
   async deleteOne(req, res, next) {
     try {
       const { id } = req.params;
@@ -74,7 +94,7 @@ class BasketController {
       const basketEvent = await Basket_Event.findOne({ where: { userId: user, eventId: id } });
 
       if (!basketEvent) {
-        return next(ApiError.badRequest("Такого івента в кошику немає"));
+        return next(ApiError.badRequest("Такого івента в календарі немає"));
       }
 
       await Basket_Event.destroy({ where: { userId: user, eventId: id } });
