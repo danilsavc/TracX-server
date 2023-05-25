@@ -8,7 +8,7 @@ const router = new Router();
 
 router.post(
   "/",
-  checkRole("ADMIN"),
+  checkRole(["ADMIN", "MODERATOR"]),
   Validation.eventValidation,
   errorValidations,
   eventController.create
@@ -18,10 +18,10 @@ router.get("/:id", eventController.getOne);
 router.get("/event-info/:id", eventController.getOneEventInfo);
 router.patch(
   "/:id",
-  checkRole("ADMIN"),
+  checkRole(["ADMIN", "MODERATOR"]),
   Validation.eventValidation,
   errorValidations,
   eventController.update
 );
-router.delete("/:id", checkRole("ADMIN"), eventController.delete);
+router.delete("/:id", checkRole(["ADMIN", "MODERATOR"]), eventController.delete);
 export default router;

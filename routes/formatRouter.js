@@ -8,7 +8,7 @@ const router = new Router();
 
 router.post(
   "/",
-  checkRole("ADMIN"),
+  checkRole(["ADMIN"]),
   Validation.formatValidation,
   errorValidations,
   formatController.create

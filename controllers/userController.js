@@ -66,10 +66,12 @@ class UserController {
         return next(ApiError.internal("Неправильна пошта або пароль"));
       }
 
-      const userRole = await UserRole.findOne({ where: { userId: user.id } });
-      const roles = await Roles.findOne({ where: { id: userRole.roleId } });
+      const userRole = await UserRole.findAll({ where: { userId: user.id } });
+      const idRoles = userRole.map((item) => item.roleId);
+      const roles = await Roles.findAll({ where: { id: idRoles } });
+      const rolesName = roles.map((item) => item.name);
 
-      const token = generateJwt(user.id, user.name, user.surname, user.email, roles.name);
+      const token = generateJwt(user.id, user.name, user.surname, user.email, rolesName);
       return res.json({ token });
     } catch (error) {
       next(ApiError.badRequest(error.message));
@@ -78,18 +80,46 @@ class UserController {
 
   async check(req, res, next) {
     try {
-      const userRole = await UserRole.findOne({ where: { userId: req.user.id } });
-      const roles = await Roles.findOne({ where: { id: userRole.roleId } });
+      const userRole = await UserRole.findAll({ where: { userId: req.user.id } });
+      const idRoles = userRole.map((item) => item.roleId);
+      const roles = await Roles.findAll({ where: { id: idRoles } });
+      const rolesName = roles.map((item) => item.name);
 
       const token = generateJwt(
         req.user.id,
         req.user.name,
         req.user.surname,
         req.user.email,
-        roles.name
+        rolesName
       );
 
       return res.json({ token });
+    } catch (error) {
+      next(ApiError.badRequest(error.message));
+    }
+  }
+
+  async getUserByEmail(req, res, next) {
+    try {
+      const { email } = req.body;
+
+      if (!email) {
+        return next(ApiError.badRequest("Треба вказати email користувача"));
+      }
+
+      const user = await User.findOne({ where: { email: email } });
+
+      if (!user) {
+        return next(ApiError.badRequest("Користувач з таким email не знайдений"));
+      }
+
+      const userRole = await UserRole.findAll({ where: { userId: user.id } });
+      const idRoles = userRole.map((item) => item.roleId);
+      const roles = await Roles.findAll({ where: { id: idRoles } });
+      const rolesName = roles.map((item) => item.name);
+
+      const token = generateJwt(user.id, user.name, user.surname, user.email, rolesName);
+      res.json({ token });
     } catch (error) {
       next(ApiError.badRequest(error.message));
     }

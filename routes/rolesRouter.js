@@ -8,11 +8,17 @@ const router = new Router();
 
 router.post(
   "/",
-  checkRole("ADMIN"),
+  checkRole(["ADMIN"]),
   Validation.rolesValidation,
   errorValidations,
   rolesController.create
 );
-router.get("/", rolesController.getAll);
-
+router.get("/", checkRole(["ADMIN"]), rolesController.getAll);
+router.post(
+  "/user-role",
+  checkRole(["ADMIN"]),
+  Validation.userRoleValidation,
+  errorValidations,
+  rolesController.userRole
+);
 export default router;

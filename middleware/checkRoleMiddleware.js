@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 
-export default function (role) {
+export default function (roles) {
   return function (req, res, next) {
     if (req.method === "OPTIONS") {
       next();
@@ -14,8 +14,11 @@ export default function (role) {
       }
 
       const decoded = jwt.verify(token, process.env.SECRETKEY);
+      console.log(decoded.roleName);
 
-      if (decoded.roleName !== role) {
+      const hasAccess = roles.some((role) => decoded.roleName.includes(role));
+
+      if (!hasAccess) {
         return res.status(403).json({ message: "Немає доступа" });
       }
 

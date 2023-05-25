@@ -76,7 +76,7 @@ class BasketController {
 
       const events = await Event.findAll({ where: { id: events_id } });
 
-      if (!events) {
+      if (!events || events.length === 0) {
         return next(ApiError.badRequest("Подій з такими id не знайдено"));
       }
 

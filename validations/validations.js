@@ -58,7 +58,7 @@ class Validations {
         min: 2,
         max: 10,
       })
-      .withMessage("Роль повиненна містити мінімум 3 символи, а максимально 10 символів"),
+      .withMessage("Роль повиненна містити мінімум 2 символи, а максимально 10 символів"),
   ];
 
   formatValidation = [
@@ -70,6 +70,19 @@ class Validations {
         max: 10,
       })
       .withMessage("Формат повиненна містити мінімум 3 символи, а максимально 10 символів"),
+  ];
+
+  userRoleValidation = [
+    body("email")
+      .notEmpty()
+      .withMessage("Електронна пошта є обов'язковою для заповнення")
+      .isEmail()
+      .withMessage("Введіть коректну електронну пошту"),
+    body("roleId")
+      .notEmpty()
+      .withMessage("Роль є обов'язковою для заповнення")
+      .isInt()
+      .withMessage("roleId повинен бути int"),
   ];
 
   registrationValidation = [
