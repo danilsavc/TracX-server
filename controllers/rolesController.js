@@ -41,8 +41,7 @@ class RolesController {
         return next(ApiError.badRequest("Роль не знайдена"));
       }
 
-      const userRole = await UserRole.findOne({ userId: user.id, roleId: roles.id });
-
+      const userRole = await UserRole.findOne({ where: { userId: user.id, roleId: roles.id } });
       if (userRole) {
         return next(ApiError.internal("У користувача вже є ця роль"));
       }

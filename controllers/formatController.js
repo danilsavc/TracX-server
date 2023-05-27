@@ -5,7 +5,8 @@ const Format = models.Format || "";
 
 class FormatController {
   async create(req, res, next) {
-    const { name } = req.body;
+    let { name } = req.body;
+    name = name.toLowerCase();
     const candidate = await Format.findOne({ where: { name } });
 
     if (candidate) {
@@ -14,8 +15,8 @@ class FormatController {
       }
     }
 
-    const format = await Format.create({ name });
-    return res.json(format);
+    await Format.create({ name });
+    return res.json({ message: "Формат успішно додано" });
   }
 
   async getOne(req, res, next) {
