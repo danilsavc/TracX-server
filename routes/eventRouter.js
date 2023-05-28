@@ -14,6 +14,11 @@ router.post(
   eventController.create
 );
 router.get("/", eventController.getAll);
+router.post(
+  "/moderator-events",
+  checkRole(["ADMIN", "MODERATOR"]),
+  eventController.getAllByCreator
+);
 router.get("/:id", eventController.getOne);
 router.get("/event-info/:id", eventController.getOneEventInfo);
 router.patch(

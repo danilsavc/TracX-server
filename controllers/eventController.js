@@ -3,6 +3,8 @@ import ApiError from "../error/apiError.js";
 
 const Event = models.Event || "";
 const EventInfo = models.EventInfo || "";
+const Format = models.Format || "";
+const Category = models.Category || "";
 
 class EventController {
   async create(req, res, next) {
@@ -10,6 +12,16 @@ class EventController {
       const user_id = req.user.id;
       let { title, descriptions, data, price, tags, categoryId, bcgColor, formatId, info } =
         req.body;
+
+      const format = await Format.findOne({ where: { id: formatId } });
+      const category = await Category.findOne({ where: { id: categoryId } });
+
+      if (!format) {
+        return next(ApiError.badRequest("Формат не знайдено"));
+      }
+      if (!category) {
+        return next(ApiError.badRequest("Категорію не знайдено"));
+      }
 
       const event = await Event.create({
         title,
@@ -82,6 +94,26 @@ class EventController {
       if (categoryId && formatId) {
         events = await Event.findAndCountAll({ where: { categoryId, formatId }, limit, offset });
       }
+
+      totalItems = events.count;
+      totalPages = Math.ceil(totalItems / limit);
+
+      return res.json({ events, totalPages });
+    } catch (error) {
+      res.json(ApiError.badRequest(error.message));
+    }
+  }
+
+  async getAllByCreator(req, res) {
+    try {
+      let { limit, page } = req.query;
+      const { userId } = req.body;
+      page = page || 1;
+      limit = limit || 6;
+      let offset = page * limit - limit;
+      let totalItems = 0;
+      let totalPages = 0;
+      const events = await Event.findAndCountAll({ where: { userId: userId }, limit, offset });
 
       totalItems = events.count;
       totalPages = Math.ceil(totalItems / limit);
