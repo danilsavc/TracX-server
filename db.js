@@ -10,6 +10,10 @@ const sequelize = new Sequelize(
     dialect: "postgres",
     host: process.env.DATABASE_URL || process.env.DB_HOST,
     port: process.env.DB_PORT,
+    ssl: true, // Додайте цю опцію
+    dialectOptions: {
+      ssl: true, // Додайте цю опцію для Sequelize v6 та новіших версій
+    },
   }
 );
 
