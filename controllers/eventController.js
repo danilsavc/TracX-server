@@ -1,12 +1,106 @@
 import models from "../models/models.js";
 import ApiError from "../error/apiError.js";
+import * as tf from "@tensorflow/tfjs";
+import fs from "fs";
 
+const results = [];
 const Event = models.Event || "";
 const EventInfo = models.EventInfo || "";
 const Format = models.Format || "";
 const Category = models.Category || "";
 
+const encodeItem = (item) => {
+  // Производим кодирование в соответствии с условиями
+  if (item === "React") {
+    return 1;
+  } else if (item === "Python") {
+    return 2;
+  } else if (item === "Java") {
+    return 3;
+  } else if (item === "Java Script") {
+    return 4;
+  } else {
+    return 5;
+  }
+};
+
+const preferencesEncoded = (items) => {
+  return items.map((item) => {
+    if (item === "React") {
+      return 1;
+    } else if (item === "Python") {
+      return 2;
+    } else if (item === "Java") {
+      return 3;
+    } else if (item === "Java Script") {
+      return 4;
+    } else {
+      return 5;
+    }
+  });
+};
+
+function encodeRecommendations(recommendations) {
+  return recommendations.map((recommendation, index) => {
+    const [eventId, eventName, eventType, eventDateTime, rating] = recommendation;
+    return [
+      parseInt(eventId),
+      index,
+      encodeItem(eventType),
+      new Date(eventDateTime).getTime(),
+      parseInt(rating),
+    ];
+  });
+}
+
 class EventController {
+  // model;
+  // mean;
+  // stdDev;
+
+  // normalizeData(data) {
+  //   return data.sub(this.mean).div(this.stdDev);
+  // }
+
+  // constructor() {
+  //   this.normalizeData = this.normalizeData.bind(this);
+  //   this.model = tf.sequential();
+  //   this.model.add(tf.layers.dense({ units: 5, inputShape: [2] }));
+  //   this.model.compile({ loss: "meanSquaredError", optimizer: "sgd" });
+
+  //   var dataset = JSON.parse(fs.readFileSync("data.json", "utf8"));
+
+  //   const clients = dataset.map((item) => [
+  //     parseFloat(item.ClientID),
+  //     preferencesEncoded(item.Preferences),
+  //   ]);
+
+  //   const events = dataset.map((item, index) => [
+  //     encodeRecommendations(item.Recommendations),
+  //     // parseFloat(item.EventID),
+  //     // index,
+  //     // encodeItem(item.EventType),
+  //     // new Date(item.EventDateTime).getTime(),
+  //     // parseFloat(item.Rating),
+  //   ]);
+  //   const xs = tf.tensor2d(clients, [dataset.length, 2]);
+
+  //   const { mean, variance } = tf.moments(xs, 0);
+  //   this.mean = mean;
+  //   this.stdDev = tf.sqrt(variance);
+  //   const normalizedXs = this.normalizeData(xs);
+
+  //   const ys = tf.tensor3d(events, [dataset.length, 5]);
+
+  //   console.log("Start Model training!");
+  //   this.model.fit(normalizedXs, ys, { epochs: 100 }).then(() => {
+  //     console.log("Model trained!");
+  //     // model.predict(tf.tensor2d([5, [1, 2]], [1, 2])).print();
+  //   });
+
+  //   this.getRecomandationEvent = this.getRecomandationEvent.bind(this);
+  // }
+
   async create(req, res, next) {
     try {
       const user_id = req.user.id;
@@ -233,6 +327,25 @@ class EventController {
       }
 
       res.json(eventInfo);
+    } catch (error) {
+      next(ApiError.badRequest(error.message));
+    }
+  }
+
+  async getRecomandationEvent(req, res, next) {
+    try {
+      // const { userId, preferences } = req.body;
+      // const events = await Event.findAll();
+      // const xs = tf.tensor2d([parseFloat(userId), preferencesEncoded(preferences)], [1, 2]);
+      // const normalizedXs = this.normalizeData(xs);
+      // const prediction = this.model.predict(normalizedXs).dataSync();
+      // return res.json({
+      //   EventId: Math.round(prediction[0]),
+      //   EventName: Math.round(prediction[1]),
+      //   EventType: Math.round(prediction[2]),
+      //   EventDataTime: Math.round(prediction[3]),
+      //   Rating: Math.round(prediction[4]),
+      // });
     } catch (error) {
       next(ApiError.badRequest(error.message));
     }

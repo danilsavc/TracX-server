@@ -8,12 +8,8 @@ const sequelize = new Sequelize(
   process.env.DB_PASSWORD, // Password
   {
     dialect: "postgres",
-    host: process.env.DATABASE_URL || process.env.DB_HOST,
+    host: process.env.DB_HOST,
     port: process.env.DB_PORT,
-    ssl: true, // Додайте цю опцію
-    dialectOptions: {
-      ssl: true, // Додайте цю опцію для Sequelize v6 та новіших версій
-    },
   }
 );
 

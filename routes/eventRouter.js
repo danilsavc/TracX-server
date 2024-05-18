@@ -3,6 +3,7 @@ import eventController from "../controllers/eventController.js";
 import Validation from "../validations/validations.js";
 import errorValidations from "../middleware/ErrorValidationsMeddleware.js";
 import checkRole from "../middleware/checkRoleMiddleware.js";
+import authMiddleware from "../middleware/authMiddleware.js";
 
 const router = new Router();
 
@@ -19,6 +20,7 @@ router.post(
   checkRole(["ADMIN", "MODERATOR"]),
   eventController.getAllByCreator
 );
+router.post("/prediction", eventController.getRecomandationEvent);
 router.get("/:id", eventController.getOne);
 router.get("/event-info/:id", eventController.getOneEventInfo);
 router.patch(

@@ -1,0 +1,2286 @@
+[
+    {
+        "ClientID": 1,
+        "Preferences": [
+            "Lazarus",
+            "Python"
+        ],
+        "Recommendations": [
+            [
+                138,
+                "Recommended Event for Client 1",
+                "Lazarus",
+                "2024-08-08 08:54:47",
+                2
+            ],
+            [
+                617,
+                "Recommended Event for Client 1",
+                "Python",
+                "2024-09-11 15:02:03",
+                5
+            ]
+        ]
+    },
+    {
+        "ClientID": 2,
+        "Preferences": [
+            "Python",
+            "React"
+        ],
+        "Recommendations": [
+            [
+                318,
+                "Recommended Event for Client 2",
+                "Python",
+                "2024-01-27 17:18:59",
+                2
+            ],
+            [
+                473,
+                "Recommended Event for Client 2",
+                "React",
+                "2024-02-02 04:18:29",
+                1
+            ]
+        ]
+    },
+    {
+        "ClientID": 3,
+        "Preferences": [
+            "Java"
+        ],
+        "Recommendations": [
+            [
+                711,
+                "Recommended Event for Client 3",
+                "Java",
+                "2024-08-17 14:23:51",
+                4
+            ]
+        ]
+    },
+    {
+        "ClientID": 4,
+        "Preferences": [
+            "Java Script",
+            "Python"
+        ],
+        "Recommendations": [
+            [
+                867,
+                "Recommended Event for Client 4",
+                "Java Script",
+                "2024-09-08 18:42:52",
+                4
+            ],
+            [
+                747,
+                "Recommended Event for Client 4",
+                "Python",
+                "2024-08-17 18:34:05",
+                4
+            ]
+        ]
+    },
+    {
+        "ClientID": 5,
+        "Preferences": [
+            "Python"
+        ],
+        "Recommendations": [
+            [
+                537,
+                "Recommended Event for Client 5",
+                "Python",
+                "2024-05-16 05:28:23",
+                5
+            ]
+        ]
+    },
+    {
+        "ClientID": 6,
+        "Preferences": [
+            "Lazarus"
+        ],
+        "Recommendations": [
+            [
+                449,
+                "Recommended Event for Client 6",
+                "Lazarus",
+                "2024-01-14 01:05:51",
+                3
+            ]
+        ]
+    },
+    {
+        "ClientID": 7,
+        "Preferences": [
+            "Python"
+        ],
+        "Recommendations": [
+            [
+                183,
+                "Recommended Event for Client 7",
+                "Python",
+                "2024-10-17 16:28:40",
+                5
+            ]
+        ]
+    },
+    {
+        "ClientID": 8,
+        "Preferences": [
+            "Python",
+            "Java Script",
+            "Java"
+        ],
+        "Recommendations": [
+            [
+                411,
+                "Recommended Event for Client 8",
+                "Python",
+                "2024-08-22 04:59:57",
+                1
+            ],
+            [
+                140,
+                "Recommended Event for Client 8",
+                "Java Script",
+                "2024-02-06 09:48:12",
+                2
+            ],
+            [
+                520,
+                "Recommended Event for Client 8",
+                "Java",
+                "2024-09-20 05:29:14",
+                5
+            ]
+        ]
+    },
+    {
+        "ClientID": 9,
+        "Preferences": [
+            "React",
+            "Java"
+        ],
+        "Recommendations": [
+            [
+                197,
+                "Recommended Event for Client 9",
+                "React",
+                "2024-07-11 20:08:39",
+                3
+            ],
+            [
+                774,
+                "Recommended Event for Client 9",
+                "Java",
+                "2024-03-21 07:40:30",
+                1
+            ]
+        ]
+    },
+    {
+        "ClientID": 10,
+        "Preferences": [
+            "React"
+        ],
+        "Recommendations": [
+            [
+                968,
+                "Recommended Event for Client 10",
+                "React",
+                "2024-03-06 19:38:12",
+                3
+            ]
+        ]
+    },
+    {
+        "ClientID": 11,
+        "Preferences": [
+            "React",
+            "Java Script",
+            "Python"
+        ],
+        "Recommendations": [
+            [
+                729,
+                "Recommended Event for Client 11",
+                "React",
+                "2024-01-18 21:39:05",
+                3
+            ],
+            [
+                992,
+                "Recommended Event for Client 11",
+                "Java Script",
+                "2024-11-27 17:57:44",
+                2
+            ],
+            [
+                19,
+                "Recommended Event for Client 11",
+                "Python",
+                "2024-02-23 11:54:21",
+                1
+            ]
+        ]
+    },
+    {
+        "ClientID": 12,
+        "Preferences": [
+            "Java"
+        ],
+        "Recommendations": [
+            [
+                774,
+                "Recommended Event for Client 12",
+                "Java",
+                "2024-08-03 18:19:10",
+                3
+            ]
+        ]
+    },
+    {
+        "ClientID": 13,
+        "Preferences": [
+            "React",
+            "Lazarus"
+        ],
+        "Recommendations": [
+            [
+                593,
+                "Recommended Event for Client 13",
+                "React",
+                "2024-04-17 22:20:10",
+                2
+            ],
+            [
+                228,
+                "Recommended Event for Client 13",
+                "Lazarus",
+                "2024-10-10 10:04:33",
+                2
+            ]
+        ]
+    },
+    {
+        "ClientID": 14,
+        "Preferences": [
+            "Python",
+            "Java",
+            "Lazarus"
+        ],
+        "Recommendations": [
+            [
+                861,
+                "Recommended Event for Client 14",
+                "Python",
+                "2024-07-14 13:38:37",
+                5
+            ],
+            [
+                917,
+                "Recommended Event for Client 14",
+                "Java",
+                "2024-02-25 14:29:15",
+                5
+            ],
+            [
+                445,
+                "Recommended Event for Client 14",
+                "Lazarus",
+                "2024-06-06 16:30:57",
+                5
+            ]
+        ]
+    },
+    {
+        "ClientID": 15,
+        "Preferences": [
+            "Java",
+            "React",
+            "Java Script"
+        ],
+        "Recommendations": [
+            [
+                478,
+                "Recommended Event for Client 15",
+                "Java",
+                "2024-04-09 06:56:43",
+                1
+            ],
+            [
+                813,
+                "Recommended Event for Client 15",
+                "React",
+                "2024-08-06 03:29:08",
+                3
+            ],
+            [
+                478,
+                "Recommended Event for Client 15",
+                "Java Script",
+                "2024-02-29 15:41:25",
+                4
+            ]
+        ]
+    },
+    {
+        "ClientID": 16,
+        "Preferences": [
+            "Java",
+            "Lazarus"
+        ],
+        "Recommendations": [
+            [
+                70,
+                "Recommended Event for Client 16",
+                "Java",
+                "2024-02-09 22:09:43",
+                1
+            ],
+            [
+                867,
+                "Recommended Event for Client 16",
+                "Lazarus",
+                "2024-05-01 15:46:39",
+                1
+            ]
+        ]
+    },
+    {
+        "ClientID": 17,
+        "Preferences": [
+            "React",
+            "Lazarus"
+        ],
+        "Recommendations": [
+            [
+                870,
+                "Recommended Event for Client 17",
+                "React",
+                "2024-01-11 22:35:46",
+                4
+            ],
+            [
+                20,
+                "Recommended Event for Client 17",
+                "Lazarus",
+                "2024-09-23 05:42:32",
+                4
+            ]
+        ]
+    },
+    {
+        "ClientID": 18,
+        "Preferences": [
+            "Java Script",
+            "React"
+        ],
+        "Recommendations": [
+            [
+                15,
+                "Recommended Event for Client 18",
+                "Java Script",
+                "2024-11-10 06:01:28",
+                5
+            ],
+            [
+                911,
+                "Recommended Event for Client 18",
+                "React",
+                "2024-01-03 08:48:31",
+                3
+            ]
+        ]
+    },
+    {
+        "ClientID": 19,
+        "Preferences": [
+            "Java Script"
+        ],
+        "Recommendations": [
+            [
+                350,
+                "Recommended Event for Client 19",
+                "Java Script",
+                "2024-02-11 11:16:56",
+                5
+            ]
+        ]
+    },
+    {
+        "ClientID": 20,
+        "Preferences": [
+            "Java Script"
+        ],
+        "Recommendations": [
+            [
+                578,
+                "Recommended Event for Client 20",
+                "Java Script",
+                "2024-03-07 04:01:29",
+                3
+            ]
+        ]
+    },
+    {
+        "ClientID": 21,
+        "Preferences": [
+            "React"
+        ],
+        "Recommendations": [
+            [
+                975,
+                "Recommended Event for Client 21",
+                "React",
+                "2024-06-25 10:42:04",
+                5
+            ]
+        ]
+    },
+    {
+        "ClientID": 22,
+        "Preferences": [
+            "Java",
+            "Python",
+            "Java Script"
+        ],
+        "Recommendations": [
+            [
+                60,
+                "Recommended Event for Client 22",
+                "Java",
+                "2024-01-03 03:15:48",
+                2
+            ],
+            [
+                745,
+                "Recommended Event for Client 22",
+                "Python",
+                "2024-03-24 23:07:23",
+                2
+            ],
+            [
+                778,
+                "Recommended Event for Client 22",
+                "Java Script",
+                "2024-01-03 21:47:14",
+                2
+            ]
+        ]
+    },
+    {
+        "ClientID": 23,
+        "Preferences": [
+            "Java"
+        ],
+        "Recommendations": [
+            [
+                815,
+                "Recommended Event for Client 23",
+                "Java",
+                "2024-10-29 18:07:14",
+                3
+            ]
+        ]
+    },
+    {
+        "ClientID": 24,
+        "Preferences": [
+            "Java",
+            "Python",
+            "Java Script"
+        ],
+        "Recommendations": [
+            [
+                829,
+                "Recommended Event for Client 24",
+                "Java",
+                "2024-05-02 07:29:52",
+                2
+            ],
+            [
+                989,
+                "Recommended Event for Client 24",
+                "Python",
+                "2024-01-08 04:40:00",
+                1
+            ],
+            [
+                788,
+                "Recommended Event for Client 24",
+                "Java Script",
+                "2024-12-29 22:05:18",
+                1
+            ]
+        ]
+    },
+    {
+        "ClientID": 25,
+        "Preferences": [
+            "Java Script"
+        ],
+        "Recommendations": [
+            [
+                172,
+                "Recommended Event for Client 25",
+                "Java Script",
+                "2024-01-11 01:51:15",
+                3
+            ]
+        ]
+    },
+    {
+        "ClientID": 26,
+        "Preferences": [
+            "Java Script"
+        ],
+        "Recommendations": [
+            [
+                928,
+                "Recommended Event for Client 26",
+                "Java Script",
+                "2024-11-18 14:45:01",
+                1
+            ]
+        ]
+    },
+    {
+        "ClientID": 27,
+        "Preferences": [
+            "Lazarus",
+            "React"
+        ],
+        "Recommendations": [
+            [
+                947,
+                "Recommended Event for Client 27",
+                "Lazarus",
+                "2024-11-06 23:13:58",
+                3
+            ],
+            [
+                913,
+                "Recommended Event for Client 27",
+                "React",
+                "2024-12-15 21:05:07",
+                2
+            ]
+        ]
+    },
+    {
+        "ClientID": 28,
+        "Preferences": [
+            "Python",
+            "Lazarus",
+            "Java"
+        ],
+        "Recommendations": [
+            [
+                213,
+                "Recommended Event for Client 28",
+                "Python",
+                "2024-07-14 11:43:24",
+                1
+            ],
+            [
+                978,
+                "Recommended Event for Client 28",
+                "Lazarus",
+                "2024-01-15 05:33:23",
+                2
+            ],
+            [
+                379,
+                "Recommended Event for Client 28",
+                "Java",
+                "2024-01-14 10:47:59",
+                2
+            ]
+        ]
+    },
+    {
+        "ClientID": 29,
+        "Preferences": [
+            "Lazarus",
+            "React"
+        ],
+        "Recommendations": [
+            [
+                782,
+                "Recommended Event for Client 29",
+                "Lazarus",
+                "2024-02-29 08:35:04",
+                2
+            ],
+            [
+                830,
+                "Recommended Event for Client 29",
+                "React",
+                "2024-11-09 13:43:05",
+                3
+            ]
+        ]
+    },
+    {
+        "ClientID": 30,
+        "Preferences": [
+            "Java Script",
+            "Lazarus"
+        ],
+        "Recommendations": [
+            [
+                306,
+                "Recommended Event for Client 30",
+                "Java Script",
+                "2024-03-07 23:46:31",
+                2
+            ],
+            [
+                150,
+                "Recommended Event for Client 30",
+                "Lazarus",
+                "2024-10-30 19:31:28",
+                1
+            ]
+        ]
+    },
+    {
+        "ClientID": 31,
+        "Preferences": [
+            "Java",
+            "Python"
+        ],
+        "Recommendations": [
+            [
+                483,
+                "Recommended Event for Client 31",
+                "Java",
+                "2024-09-13 13:30:46",
+                2
+            ],
+            [
+                362,
+                "Recommended Event for Client 31",
+                "Python",
+                "2024-01-15 11:59:32",
+                1
+            ]
+        ]
+    },
+    {
+        "ClientID": 32,
+        "Preferences": [
+            "Lazarus"
+        ],
+        "Recommendations": [
+            [
+                385,
+                "Recommended Event for Client 32",
+                "Lazarus",
+                "2024-06-01 19:37:37",
+                3
+            ]
+        ]
+    },
+    {
+        "ClientID": 33,
+        "Preferences": [
+            "React",
+            "Python"
+        ],
+        "Recommendations": [
+            [
+                309,
+                "Recommended Event for Client 33",
+                "React",
+                "2024-05-16 23:45:13",
+                5
+            ],
+            [
+                507,
+                "Recommended Event for Client 33",
+                "Python",
+                "2024-09-17 17:20:53",
+                3
+            ]
+        ]
+    },
+    {
+        "ClientID": 34,
+        "Preferences": [
+            "Lazarus",
+            "Java Script"
+        ],
+        "Recommendations": [
+            [
+                399,
+                "Recommended Event for Client 34",
+                "Lazarus",
+                "2024-01-17 23:29:08",
+                2
+            ],
+            [
+                530,
+                "Recommended Event for Client 34",
+                "Java Script",
+                "2024-09-06 21:45:28",
+                2
+            ]
+        ]
+    },
+    {
+        "ClientID": 35,
+        "Preferences": [
+            "Java",
+            "Python"
+        ],
+        "Recommendations": [
+            [
+                578,
+                "Recommended Event for Client 35",
+                "Java",
+                "2024-10-12 02:46:53",
+                1
+            ],
+            [
+                10,
+                "Recommended Event for Client 35",
+                "Python",
+                "2024-02-16 13:33:08",
+                1
+            ]
+        ]
+    },
+    {
+        "ClientID": 36,
+        "Preferences": [
+            "Java",
+            "Python",
+            "Java Script"
+        ],
+        "Recommendations": [
+            [
+                772,
+                "Recommended Event for Client 36",
+                "Java",
+                "2024-05-24 18:20:57",
+                5
+            ],
+            [
+                515,
+                "Recommended Event for Client 36",
+                "Python",
+                "2024-07-27 06:32:17",
+                2
+            ],
+            [
+                859,
+                "Recommended Event for Client 36",
+                "Java Script",
+                "2024-09-26 01:51:47",
+                1
+            ]
+        ]
+    },
+    {
+        "ClientID": 37,
+        "Preferences": [
+            "Python",
+            "Lazarus"
+        ],
+        "Recommendations": [
+            [
+                911,
+                "Recommended Event for Client 37",
+                "Python",
+                "2024-09-10 04:02:19",
+                4
+            ],
+            [
+                980,
+                "Recommended Event for Client 37",
+                "Lazarus",
+                "2024-11-22 07:54:08",
+                2
+            ]
+        ]
+    },
+    {
+        "ClientID": 38,
+        "Preferences": [
+            "Lazarus",
+            "Java",
+            "Python"
+        ],
+        "Recommendations": [
+            [
+                62,
+                "Recommended Event for Client 38",
+                "Lazarus",
+                "2024-12-21 20:54:06",
+                5
+            ],
+            [
+                926,
+                "Recommended Event for Client 38",
+                "Java",
+                "2024-03-21 21:14:40",
+                2
+            ],
+            [
+                517,
+                "Recommended Event for Client 38",
+                "Python",
+                "2024-09-29 07:23:58",
+                5
+            ]
+        ]
+    },
+    {
+        "ClientID": 39,
+        "Preferences": [
+            "Python"
+        ],
+        "Recommendations": [
+            [
+                749,
+                "Recommended Event for Client 39",
+                "Python",
+                "2024-04-10 17:00:58",
+                1
+            ]
+        ]
+    },
+    {
+        "ClientID": 40,
+        "Preferences": [
+            "Python",
+            "Java Script",
+            "Lazarus"
+        ],
+        "Recommendations": [
+            [
+                850,
+                "Recommended Event for Client 40",
+                "Python",
+                "2024-01-21 19:01:54",
+                4
+            ],
+            [
+                627,
+                "Recommended Event for Client 40",
+                "Java Script",
+                "2024-01-30 15:21:06",
+                3
+            ],
+            [
+                81,
+                "Recommended Event for Client 40",
+                "Lazarus",
+                "2024-09-13 04:30:41",
+                2
+            ]
+        ]
+    },
+    {
+        "ClientID": 41,
+        "Preferences": [
+            "Lazarus"
+        ],
+        "Recommendations": [
+            [
+                605,
+                "Recommended Event for Client 41",
+                "Lazarus",
+                "2024-03-07 19:19:00",
+                5
+            ]
+        ]
+    },
+    {
+        "ClientID": 42,
+        "Preferences": [
+            "Lazarus",
+            "Java Script",
+            "Java"
+        ],
+        "Recommendations": [
+            [
+                988,
+                "Recommended Event for Client 42",
+                "Lazarus",
+                "2024-06-21 03:51:40",
+                3
+            ],
+            [
+                767,
+                "Recommended Event for Client 42",
+                "Java Script",
+                "2024-07-17 03:11:49",
+                1
+            ],
+            [
+                920,
+                "Recommended Event for Client 42",
+                "Java",
+                "2024-08-03 08:43:29",
+                2
+            ]
+        ]
+    },
+    {
+        "ClientID": 43,
+        "Preferences": [
+            "React",
+            "Python",
+            "Java"
+        ],
+        "Recommendations": [
+            [
+                401,
+                "Recommended Event for Client 43",
+                "React",
+                "2024-11-12 12:51:54",
+                5
+            ],
+            [
+                528,
+                "Recommended Event for Client 43",
+                "Python",
+                "2024-05-16 19:54:01",
+                2
+            ],
+            [
+                262,
+                "Recommended Event for Client 43",
+                "Java",
+                "2024-08-12 11:00:23",
+                2
+            ]
+        ]
+    },
+    {
+        "ClientID": 44,
+        "Preferences": [
+            "Python",
+            "React"
+        ],
+        "Recommendations": [
+            [
+                191,
+                "Recommended Event for Client 44",
+                "Python",
+                "2024-01-30 13:27:36",
+                5
+            ],
+            [
+                999,
+                "Recommended Event for Client 44",
+                "React",
+                "2024-04-22 12:18:01",
+                5
+            ]
+        ]
+    },
+    {
+        "ClientID": 45,
+        "Preferences": [
+            "Lazarus",
+            "Java Script",
+            "React"
+        ],
+        "Recommendations": [
+            [
+                432,
+                "Recommended Event for Client 45",
+                "Lazarus",
+                "2024-12-05 23:48:08",
+                3
+            ],
+            [
+                915,
+                "Recommended Event for Client 45",
+                "Java Script",
+                "2024-03-07 02:19:35",
+                4
+            ],
+            [
+                868,
+                "Recommended Event for Client 45",
+                "React",
+                "2024-12-29 19:05:37",
+                1
+            ]
+        ]
+    },
+    {
+        "ClientID": 46,
+        "Preferences": [
+            "Python",
+            "Java"
+        ],
+        "Recommendations": [
+            [
+                914,
+                "Recommended Event for Client 46",
+                "Python",
+                "2024-05-05 08:41:18",
+                1
+            ],
+            [
+                264,
+                "Recommended Event for Client 46",
+                "Java",
+                "2024-08-17 18:07:15",
+                2
+            ]
+        ]
+    },
+    {
+        "ClientID": 47,
+        "Preferences": [
+            "Java"
+        ],
+        "Recommendations": [
+            [
+                128,
+                "Recommended Event for Client 47",
+                "Java",
+                "2024-07-19 10:13:31",
+                2
+            ]
+        ]
+    },
+    {
+        "ClientID": 48,
+        "Preferences": [
+            "React",
+            "Python",
+            "Java"
+        ],
+        "Recommendations": [
+            [
+                915,
+                "Recommended Event for Client 48",
+                "React",
+                "2024-09-05 12:25:31",
+                5
+            ],
+            [
+                646,
+                "Recommended Event for Client 48",
+                "Python",
+                "2024-09-17 22:51:15",
+                2
+            ],
+            [
+                865,
+                "Recommended Event for Client 48",
+                "Java",
+                "2024-07-01 19:39:52",
+                3
+            ]
+        ]
+    },
+    {
+        "ClientID": 49,
+        "Preferences": [
+            "React",
+            "Java Script",
+            "Python"
+        ],
+        "Recommendations": [
+            [
+                475,
+                "Recommended Event for Client 49",
+                "React",
+                "2024-05-28 17:37:10",
+                3
+            ],
+            [
+                909,
+                "Recommended Event for Client 49",
+                "Java Script",
+                "2024-02-08 09:03:06",
+                3
+            ],
+            [
+                31,
+                "Recommended Event for Client 49",
+                "Python",
+                "2024-07-21 18:04:30",
+                1
+            ]
+        ]
+    },
+    {
+        "ClientID": 50,
+        "Preferences": [
+            "Python",
+            "Lazarus"
+        ],
+        "Recommendations": [
+            [
+                178,
+                "Recommended Event for Client 50",
+                "Python",
+                "2024-06-04 16:24:12",
+                2
+            ],
+            [
+                684,
+                "Recommended Event for Client 50",
+                "Lazarus",
+                "2024-12-29 08:47:07",
+                1
+            ]
+        ]
+    },
+    {
+        "ClientID": 51,
+        "Preferences": [
+            "Java",
+            "Java Script"
+        ],
+        "Recommendations": [
+            [
+                122,
+                "Recommended Event for Client 51",
+                "Java",
+                "2024-06-01 21:55:06",
+                2
+            ],
+            [
+                286,
+                "Recommended Event for Client 51",
+                "Java Script",
+                "2024-12-04 00:41:09",
+                5
+            ]
+        ]
+    },
+    {
+        "ClientID": 52,
+        "Preferences": [
+            "Java Script",
+            "Java",
+            "Lazarus"
+        ],
+        "Recommendations": [
+            [
+                148,
+                "Recommended Event for Client 52",
+                "Java Script",
+                "2024-07-05 12:13:03",
+                2
+            ],
+            [
+                466,
+                "Recommended Event for Client 52",
+                "Java",
+                "2024-07-22 12:27:58",
+                2
+            ],
+            [
+                276,
+                "Recommended Event for Client 52",
+                "Lazarus",
+                "2024-04-12 18:23:18",
+                3
+            ]
+        ]
+    },
+    {
+        "ClientID": 53,
+        "Preferences": [
+            "Lazarus"
+        ],
+        "Recommendations": [
+            [
+                738,
+                "Recommended Event for Client 53",
+                "Lazarus",
+                "2024-04-10 03:19:14",
+                5
+            ]
+        ]
+    },
+    {
+        "ClientID": 54,
+        "Preferences": [
+            "Lazarus"
+        ],
+        "Recommendations": [
+            [
+                17,
+                "Recommended Event for Client 54",
+                "Lazarus",
+                "2024-01-12 12:55:32",
+                2
+            ]
+        ]
+    },
+    {
+        "ClientID": 55,
+        "Preferences": [
+            "React"
+        ],
+        "Recommendations": [
+            [
+                190,
+                "Recommended Event for Client 55",
+                "React",
+                "2024-11-06 18:45:45",
+                3
+            ]
+        ]
+    },
+    {
+        "ClientID": 56,
+        "Preferences": [
+            "React",
+            "Python",
+            "Java"
+        ],
+        "Recommendations": [
+            [
+                947,
+                "Recommended Event for Client 56",
+                "React",
+                "2024-04-23 06:47:57",
+                2
+            ],
+            [
+                795,
+                "Recommended Event for Client 56",
+                "Python",
+                "2024-10-23 05:10:14",
+                4
+            ],
+            [
+                224,
+                "Recommended Event for Client 56",
+                "Java",
+                "2024-06-24 10:54:08",
+                1
+            ]
+        ]
+    },
+    {
+        "ClientID": 57,
+        "Preferences": [
+            "Java Script",
+            "Java",
+            "React"
+        ],
+        "Recommendations": [
+            [
+                617,
+                "Recommended Event for Client 57",
+                "Java Script",
+                "2024-04-04 12:38:55",
+                5
+            ],
+            [
+                891,
+                "Recommended Event for Client 57",
+                "Java",
+                "2024-05-22 19:00:14",
+                4
+            ],
+            [
+                554,
+                "Recommended Event for Client 57",
+                "React",
+                "2024-12-18 06:54:00",
+                4
+            ]
+        ]
+    },
+    {
+        "ClientID": 58,
+        "Preferences": [
+            "Java Script"
+        ],
+        "Recommendations": [
+            [
+                427,
+                "Recommended Event for Client 58",
+                "Java Script",
+                "2024-06-24 05:07:59",
+                5
+            ]
+        ]
+    },
+    {
+        "ClientID": 59,
+        "Preferences": [
+            "Java",
+            "Java Script"
+        ],
+        "Recommendations": [
+            [
+                996,
+                "Recommended Event for Client 59",
+                "Java",
+                "2024-11-17 05:43:32",
+                1
+            ],
+            [
+                195,
+                "Recommended Event for Client 59",
+                "Java Script",
+                "2024-11-14 04:42:23",
+                5
+            ]
+        ]
+    },
+    {
+        "ClientID": 60,
+        "Preferences": [
+            "Lazarus",
+            "React"
+        ],
+        "Recommendations": [
+            [
+                826,
+                "Recommended Event for Client 60",
+                "Lazarus",
+                "2024-12-02 21:17:13",
+                4
+            ],
+            [
+                902,
+                "Recommended Event for Client 60",
+                "React",
+                "2024-08-08 11:02:04",
+                1
+            ]
+        ]
+    },
+    {
+        "ClientID": 61,
+        "Preferences": [
+            "Java Script",
+            "Lazarus",
+            "Python"
+        ],
+        "Recommendations": [
+            [
+                815,
+                "Recommended Event for Client 61",
+                "Java Script",
+                "2024-12-14 04:36:34",
+                4
+            ],
+            [
+                20,
+                "Recommended Event for Client 61",
+                "Lazarus",
+                "2024-12-26 12:43:43",
+                2
+            ],
+            [
+                67,
+                "Recommended Event for Client 61",
+                "Python",
+                "2024-01-25 12:07:32",
+                1
+            ]
+        ]
+    },
+    {
+        "ClientID": 62,
+        "Preferences": [
+            "Java",
+            "Java Script"
+        ],
+        "Recommendations": [
+            [
+                817,
+                "Recommended Event for Client 62",
+                "Java",
+                "2024-10-03 13:41:15",
+                5
+            ],
+            [
+                147,
+                "Recommended Event for Client 62",
+                "Java Script",
+                "2024-02-18 03:13:20",
+                1
+            ]
+        ]
+    },
+    {
+        "ClientID": 63,
+        "Preferences": [
+            "React",
+            "Lazarus"
+        ],
+        "Recommendations": [
+            [
+                495,
+                "Recommended Event for Client 63",
+                "React",
+                "2024-10-09 00:52:47",
+                4
+            ],
+            [
+                912,
+                "Recommended Event for Client 63",
+                "Lazarus",
+                "2024-07-04 03:13:12",
+                3
+            ]
+        ]
+    },
+    {
+        "ClientID": 64,
+        "Preferences": [
+            "Java",
+            "React"
+        ],
+        "Recommendations": [
+            [
+                82,
+                "Recommended Event for Client 64",
+                "Java",
+                "2024-10-02 05:33:14",
+                4
+            ],
+            [
+                247,
+                "Recommended Event for Client 64",
+                "React",
+                "2024-10-24 22:31:32",
+                5
+            ]
+        ]
+    },
+    {
+        "ClientID": 65,
+        "Preferences": [
+            "React",
+            "Java Script",
+            "Java"
+        ],
+        "Recommendations": [
+            [
+                588,
+                "Recommended Event for Client 65",
+                "React",
+                "2024-11-29 23:43:07",
+                4
+            ],
+            [
+                317,
+                "Recommended Event for Client 65",
+                "Java Script",
+                "2024-08-02 20:28:27",
+                4
+            ],
+            [
+                988,
+                "Recommended Event for Client 65",
+                "Java",
+                "2024-01-02 15:17:11",
+                4
+            ]
+        ]
+    },
+    {
+        "ClientID": 66,
+        "Preferences": [
+            "Java"
+        ],
+        "Recommendations": [
+            [
+                91,
+                "Recommended Event for Client 66",
+                "Java",
+                "2024-08-16 17:51:29",
+                3
+            ]
+        ]
+    },
+    {
+        "ClientID": 67,
+        "Preferences": [
+            "Java",
+            "Lazarus",
+            "React"
+        ],
+        "Recommendations": [
+            [
+                151,
+                "Recommended Event for Client 67",
+                "Java",
+                "2024-04-19 00:41:35",
+                1
+            ],
+            [
+                949,
+                "Recommended Event for Client 67",
+                "Lazarus",
+                "2024-08-03 01:56:32",
+                2
+            ],
+            [
+                754,
+                "Recommended Event for Client 67",
+                "React",
+                "2024-05-17 17:02:19",
+                4
+            ]
+        ]
+    },
+    {
+        "ClientID": 68,
+        "Preferences": [
+            "Java Script",
+            "Python",
+            "Lazarus"
+        ],
+        "Recommendations": [
+            [
+                443,
+                "Recommended Event for Client 68",
+                "Java Script",
+                "2024-10-25 22:29:47",
+                1
+            ],
+            [
+                483,
+                "Recommended Event for Client 68",
+                "Python",
+                "2024-05-05 17:42:47",
+                5
+            ],
+            [
+                463,
+                "Recommended Event for Client 68",
+                "Lazarus",
+                "2024-03-31 17:32:21",
+                1
+            ]
+        ]
+    },
+    {
+        "ClientID": 69,
+        "Preferences": [
+            "Java Script"
+        ],
+        "Recommendations": [
+            [
+                308,
+                "Recommended Event for Client 69",
+                "Java Script",
+                "2024-05-18 10:46:27",
+                4
+            ]
+        ]
+    },
+    {
+        "ClientID": 70,
+        "Preferences": [
+            "Lazarus",
+            "Java Script",
+            "React"
+        ],
+        "Recommendations": [
+            [
+                739,
+                "Recommended Event for Client 70",
+                "Lazarus",
+                "2024-04-11 07:49:38",
+                3
+            ],
+            [
+                391,
+                "Recommended Event for Client 70",
+                "Java Script",
+                "2024-11-26 23:45:36",
+                1
+            ],
+            [
+                206,
+                "Recommended Event for Client 70",
+                "React",
+                "2024-11-27 21:37:15",
+                4
+            ]
+        ]
+    },
+    {
+        "ClientID": 71,
+        "Preferences": [
+            "Java",
+            "React"
+        ],
+        "Recommendations": [
+            [
+                684,
+                "Recommended Event for Client 71",
+                "Java",
+                "2024-01-14 05:39:58",
+                1
+            ],
+            [
+                348,
+                "Recommended Event for Client 71",
+                "React",
+                "2024-03-22 23:49:35",
+                2
+            ]
+        ]
+    },
+    {
+        "ClientID": 72,
+        "Preferences": [
+            "Lazarus"
+        ],
+        "Recommendations": [
+            [
+                950,
+                "Recommended Event for Client 72",
+                "Lazarus",
+                "2024-03-09 01:40:06",
+                5
+            ]
+        ]
+    },
+    {
+        "ClientID": 73,
+        "Preferences": [
+            "Java Script"
+        ],
+        "Recommendations": [
+            [
+                22,
+                "Recommended Event for Client 73",
+                "Java Script",
+                "2024-05-14 20:44:18",
+                4
+            ]
+        ]
+    },
+    {
+        "ClientID": 74,
+        "Preferences": [
+            "Java"
+        ],
+        "Recommendations": [
+            [
+                791,
+                "Recommended Event for Client 74",
+                "Java",
+                "2024-12-23 16:51:58",
+                2
+            ]
+        ]
+    },
+    {
+        "ClientID": 75,
+        "Preferences": [
+            "React",
+            "Python"
+        ],
+        "Recommendations": [
+            [
+                476,
+                "Recommended Event for Client 75",
+                "React",
+                "2024-12-23 17:08:25",
+                4
+            ],
+            [
+                43,
+                "Recommended Event for Client 75",
+                "Python",
+                "2024-12-22 12:03:57",
+                5
+            ]
+        ]
+    },
+    {
+        "ClientID": 76,
+        "Preferences": [
+            "React",
+            "Lazarus"
+        ],
+        "Recommendations": [
+            [
+                966,
+                "Recommended Event for Client 76",
+                "React",
+                "2024-04-22 02:27:56",
+                3
+            ],
+            [
+                872,
+                "Recommended Event for Client 76",
+                "Lazarus",
+                "2024-09-13 00:04:59",
+                2
+            ]
+        ]
+    },
+    {
+        "ClientID": 77,
+        "Preferences": [
+            "React",
+            "Python",
+            "Lazarus"
+        ],
+        "Recommendations": [
+            [
+                752,
+                "Recommended Event for Client 77",
+                "React",
+                "2024-08-30 13:11:20",
+                2
+            ],
+            [
+                452,
+                "Recommended Event for Client 77",
+                "Python",
+                "2024-08-31 21:05:57",
+                3
+            ],
+            [
+                107,
+                "Recommended Event for Client 77",
+                "Lazarus",
+                "2024-09-11 19:50:25",
+                4
+            ]
+        ]
+    },
+    {
+        "ClientID": 78,
+        "Preferences": [
+            "Lazarus",
+            "React"
+        ],
+        "Recommendations": [
+            [
+                512,
+                "Recommended Event for Client 78",
+                "Lazarus",
+                "2024-01-23 04:18:47",
+                5
+            ],
+            [
+                955,
+                "Recommended Event for Client 78",
+                "React",
+                "2024-03-18 09:33:22",
+                1
+            ]
+        ]
+    },
+    {
+        "ClientID": 79,
+        "Preferences": [
+            "React",
+            "Python",
+            "Java"
+        ],
+        "Recommendations": [
+            [
+                220,
+                "Recommended Event for Client 79",
+                "React",
+                "2024-01-05 21:53:25",
+                4
+            ],
+            [
+                476,
+                "Recommended Event for Client 79",
+                "Python",
+                "2024-04-30 14:23:16",
+                2
+            ],
+            [
+                47,
+                "Recommended Event for Client 79",
+                "Java",
+                "2024-07-30 15:58:47",
+                1
+            ]
+        ]
+    },
+    {
+        "ClientID": 80,
+        "Preferences": [
+            "Java",
+            "Python",
+            "Java Script"
+        ],
+        "Recommendations": [
+            [
+                406,
+                "Recommended Event for Client 80",
+                "Java",
+                "2024-08-03 23:22:03",
+                1
+            ],
+            [
+                839,
+                "Recommended Event for Client 80",
+                "Python",
+                "2024-07-07 19:18:06",
+                3
+            ],
+            [
+                192,
+                "Recommended Event for Client 80",
+                "Java Script",
+                "2024-12-16 10:22:00",
+                5
+            ]
+        ]
+    },
+    {
+        "ClientID": 81,
+        "Preferences": [
+            "Lazarus",
+            "React"
+        ],
+        "Recommendations": [
+            [
+                190,
+                "Recommended Event for Client 81",
+                "Lazarus",
+                "2024-05-29 05:49:33",
+                3
+            ],
+            [
+                818,
+                "Recommended Event for Client 81",
+                "React",
+                "2024-01-07 21:33:43",
+                4
+            ]
+        ]
+    },
+    {
+        "ClientID": 82,
+        "Preferences": [
+            "Java Script",
+            "Python"
+        ],
+        "Recommendations": [
+            [
+                859,
+                "Recommended Event for Client 82",
+                "Java Script",
+                "2024-03-16 21:51:33",
+                2
+            ],
+            [
+                468,
+                "Recommended Event for Client 82",
+                "Python",
+                "2024-10-17 13:49:11",
+                5
+            ]
+        ]
+    },
+    {
+        "ClientID": 83,
+        "Preferences": [
+            "Lazarus",
+            "Java Script",
+            "Python"
+        ],
+        "Recommendations": [
+            [
+                523,
+                "Recommended Event for Client 83",
+                "Lazarus",
+                "2024-11-24 06:57:38",
+                4
+            ],
+            [
+                822,
+                "Recommended Event for Client 83",
+                "Java Script",
+                "2024-10-15 09:15:24",
+                4
+            ],
+            [
+                184,
+                "Recommended Event for Client 83",
+                "Python",
+                "2024-10-18 11:36:55",
+                3
+            ]
+        ]
+    },
+    {
+        "ClientID": 84,
+        "Preferences": [
+            "Lazarus"
+        ],
+        "Recommendations": [
+            [
+                340,
+                "Recommended Event for Client 84",
+                "Lazarus",
+                "2024-11-08 03:25:40",
+                1
+            ]
+        ]
+    },
+    {
+        "ClientID": 85,
+        "Preferences": [
+            "Lazarus"
+        ],
+        "Recommendations": [
+            [
+                764,
+                "Recommended Event for Client 85",
+                "Lazarus",
+                "2024-02-09 18:20:35",
+                5
+            ]
+        ]
+    },
+    {
+        "ClientID": 86,
+        "Preferences": [
+            "React"
+        ],
+        "Recommendations": [
+            [
+                642,
+                "Recommended Event for Client 86",
+                "React",
+                "2024-04-23 12:38:15",
+                3
+            ]
+        ]
+    },
+    {
+        "ClientID": 87,
+        "Preferences": [
+            "Lazarus"
+        ],
+        "Recommendations": [
+            [
+                234,
+                "Recommended Event for Client 87",
+                "Lazarus",
+                "2024-11-22 15:23:35",
+                3
+            ]
+        ]
+    },
+    {
+        "ClientID": 88,
+        "Preferences": [
+            "Python"
+        ],
+        "Recommendations": [
+            [
+                481,
+                "Recommended Event for Client 88",
+                "Python",
+                "2024-07-19 23:58:55",
+                3
+            ]
+        ]
+    },
+    {
+        "ClientID": 89,
+        "Preferences": [
+            "Java",
+            "Java Script",
+            "Lazarus"
+        ],
+        "Recommendations": [
+            [
+                477,
+                "Recommended Event for Client 89",
+                "Java",
+                "2024-10-31 18:02:04",
+                2
+            ],
+            [
+                580,
+                "Recommended Event for Client 89",
+                "Java Script",
+                "2024-11-15 23:10:31",
+                2
+            ],
+            [
+                390,
+                "Recommended Event for Client 89",
+                "Lazarus",
+                "2024-07-08 09:48:15",
+                4
+            ]
+        ]
+    },
+    {
+        "ClientID": 90,
+        "Preferences": [
+            "Python",
+            "Lazarus"
+        ],
+        "Recommendations": [
+            [
+                791,
+                "Recommended Event for Client 90",
+                "Python",
+                "2024-03-04 15:39:35",
+                1
+            ],
+            [
+                649,
+                "Recommended Event for Client 90",
+                "Lazarus",
+                "2024-10-26 13:15:24",
+                1
+            ]
+        ]
+    },
+    {
+        "ClientID": 91,
+        "Preferences": [
+            "Lazarus"
+        ],
+        "Recommendations": [
+            [
+                682,
+                "Recommended Event for Client 91",
+                "Lazarus",
+                "2024-04-23 04:45:10",
+                4
+            ]
+        ]
+    },
+    {
+        "ClientID": 92,
+        "Preferences": [
+            "React",
+            "Java Script",
+            "Lazarus"
+        ],
+        "Recommendations": [
+            [
+                152,
+                "Recommended Event for Client 92",
+                "React",
+                "2024-04-08 07:51:49",
+                4
+            ],
+            [
+                759,
+                "Recommended Event for Client 92",
+                "Java Script",
+                "2024-12-05 20:16:58",
+                5
+            ],
+            [
+                248,
+                "Recommended Event for Client 92",
+                "Lazarus",
+                "2024-11-30 00:59:49",
+                1
+            ]
+        ]
+    },
+    {
+        "ClientID": 93,
+        "Preferences": [
+            "React"
+        ],
+        "Recommendations": [
+            [
+                789,
+                "Recommended Event for Client 93",
+                "React",
+                "2024-06-20 10:52:28",
+                1
+            ]
+        ]
+    },
+    {
+        "ClientID": 94,
+        "Preferences": [
+            "Lazarus",
+            "React",
+            "Python"
+        ],
+        "Recommendations": [
+            [
+                679,
+                "Recommended Event for Client 94",
+                "Lazarus",
+                "2024-07-11 12:03:56",
+                5
+            ],
+            [
+                222,
+                "Recommended Event for Client 94",
+                "React",
+                "2024-05-08 23:47:34",
+                1
+            ],
+            [
+                216,
+                "Recommended Event for Client 94",
+                "Python",
+                "2024-02-12 23:45:50",
+                3
+            ]
+        ]
+    },
+    {
+        "ClientID": 95,
+        "Preferences": [
+            "React",
+            "Java Script",
+            "Python"
+        ],
+        "Recommendations": [
+            [
+                987,
+                "Recommended Event for Client 95",
+                "React",
+                "2024-07-01 18:07:35",
+                4
+            ],
+            [
+                623,
+                "Recommended Event for Client 95",
+                "Java Script",
+                "2024-08-13 19:31:27",
+                2
+            ],
+            [
+                164,
+                "Recommended Event for Client 95",
+                "Python",
+                "2024-11-01 17:37:51",
+                4
+            ]
+        ]
+    },
+    {
+        "ClientID": 96,
+        "Preferences": [
+            "Java Script",
+            "Java"
+        ],
+        "Recommendations": [
+            [
+                349,
+                "Recommended Event for Client 96",
+                "Java Script",
+                "2024-07-07 22:58:32",
+                2
+            ],
+            [
+                299,
+                "Recommended Event for Client 96",
+                "Java",
+                "2024-06-17 02:26:22",
+                2
+            ]
+        ]
+    },
+    {
+        "ClientID": 97,
+        "Preferences": [
+            "React",
+            "Java"
+        ],
+        "Recommendations": [
+            [
+                159,
+                "Recommended Event for Client 97",
+                "React",
+                "2024-10-28 13:28:06",
+                1
+            ],
+            [
+                684,
+                "Recommended Event for Client 97",
+                "Java",
+                "2024-05-25 14:59:07",
+                1
+            ]
+        ]
+    },
+    {
+        "ClientID": 98,
+        "Preferences": [
+            "Lazarus"
+        ],
+        "Recommendations": [
+            [
+                150,
+                "Recommended Event for Client 98",
+                "Lazarus",
+                "2024-06-22 00:50:56",
+                3
+            ]
+        ]
+    },
+    {
+        "ClientID": 99,
+        "Preferences": [
+            "Lazarus",
+            "Python",
+            "Java Script"
+        ],
+        "Recommendations": [
+            [
+                569,
+                "Recommended Event for Client 99",
+                "Lazarus",
+                "2024-06-11 16:15:21",
+                4
+            ],
+            [
+                389,
+                "Recommended Event for Client 99",
+                "Python",
+                "2024-09-01 05:28:44",
+                1
+            ],
+            [
+                742,
+                "Recommended Event for Client 99",
+                "Java Script",
+                "2024-02-14 12:13:18",
+                4
+            ]
+        ]
+    },
+    {
+        "ClientID": 100,
+        "Preferences": [
+            "Java Script"
+        ],
+        "Recommendations": [
+            [
+                528,
+                "Recommended Event for Client 100",
+                "Java Script",
+                "2024-12-27 16:04:22",
+                2
+            ]
+        ]
+    }
+]
